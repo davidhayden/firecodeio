@@ -16,9 +16,23 @@ duplicate_items([1, 3, 4, 2, 1, 2, 4]) => [1, 2, 4]
 
 from collections import Counter
 
+
 def duplicate_items(list_numbers):
+    """
+    Return sorted list of duplicate numbers.
+
+    >>> duplicate_items([1, 3, 4, 2, 1])
+    [1]
+    >>> duplicate_items([1, 3, 4, 2, 1, 2, 4])
+    [1, 2, 4]
+    """
     counts = Counter(list_numbers)
 
     items = [n[0] for n in counts.items() if n[1] > 1]
 
     return sorted(items)
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
