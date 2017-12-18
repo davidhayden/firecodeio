@@ -16,7 +16,10 @@ def reverse_string(a_string):
     >>> reverse_string('madam')
     'madam'
     """
-    return a_string[-1] + reverse(a_string[:-1])
+    if len(a_string) < 2:
+        return a_string
+
+    return a_string[-1] + reverse_string(a_string[:-1])
 
 
 if __name__ == "__main__":
